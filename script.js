@@ -349,21 +349,9 @@ function isAllLocked(lock) {
 
 function wZero(element_a, element_b, element_c, player_0, player_1) {
     if (isZero(element_a) && isZero(element_b) && isZero(element_c)) {
-        if ((player_1 === false) && (player_0 === true)) {
-            //player 0 won by zeros in cells
-            for (let i = 0; i < 3; i++) {// since a player won, game over
-                for (let j = 0; j < 3; j++) {
-                    lock[i][j] = 1
-                }
-            }
-            element_a.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
-            element_b.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
-            element_c.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
-            alert("Player 0 won, congratulations !!!")
-            return 1
-        }
+        console.log("in wZero()")
         if ((player_0 === false) && (player_1 === true)) {
-            //player 1 won by zeros in cells
+            //player 1 won 
             for (let i = 0; i < 3; i++) {// since a player won, game over
                 for (let j = 0; j < 3; j++) {
                     lock[i][j] = 1
@@ -372,8 +360,7 @@ function wZero(element_a, element_b, element_c, player_0, player_1) {
             element_a.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
             element_b.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
             element_c.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
-            alert("Player 1 won, congratulations !!!")
-
+            setTimeout(() => { alert("Player 1 won, congratulations !!!") }, 50)
             return 1
         }
     }
@@ -383,7 +370,7 @@ function wZero(element_a, element_b, element_c, player_0, player_1) {
 function wCross(element_a, element_b, element_c, player_0, player_1) {
     if (isCross(element_a) && isCross(element_b) && isCross(element_c)) {
         if ((player_1 === false) && (player_0 === true)) {
-            //player 0 won by Cross in cells
+            //player 0 won 
             for (let i = 0; i < 3; i++) {// since a player won, game over
                 for (let j = 0; j < 3; j++) {
                     lock[i][j] = 1
@@ -392,20 +379,7 @@ function wCross(element_a, element_b, element_c, player_0, player_1) {
             element_a.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
             element_b.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
             element_c.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
-            alert("Player 0 won, congratulations !!!")
-            return 1
-        }
-        if ((player_0 === false) && (player_1 === true)) {
-            //player 1 won by Cross in cells
-            for (let i = 0; i < 3; i++) {// since a player won, game over
-                for (let j = 0; j < 3; j++) {
-                    lock[i][j] = 1
-                }
-            }
-            element_a.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
-            element_b.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
-            element_c.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
-            alert("Player 1 won, congratulations !!!")
+            setTimeout(() => { alert("Player 1 won, congratulations !!!") }, 50)
             return 1
         }
     }
