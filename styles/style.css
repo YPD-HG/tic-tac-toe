@@ -3,40 +3,39 @@ h1 {
     text-align: center;
 }
 
-body{
+body {}
 
-}
-
-.container{
+.container {
     display: grid;
     grid-template-columns: repeat(3, 1fr)
 }
 
-.player_0{
+#player_0 {
     display: flex;
     justify-content: end;
     align-items: center;
     margin-right: 5px;
-
+    color: red;
 }
 
-.player_1{
+#player_1 {
     display: flex;
     justify-content: start;
     /* flex-direction: column; */
     align-items: center;
+    /* color: #63E6BE; */
 }
 
-.player_1 i{
+#player_1 i {
     margin-right: 5px;
 }
 
-.newGame{
+.newGame {
     display: flex;
     justify-content: center;
     margin: 30px;
 }
 
-.newGame button{
+.newGame button {
     padding: 10px 20px 10px 20px;
 }

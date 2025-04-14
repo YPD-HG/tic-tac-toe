@@ -17,28 +17,41 @@ let element_12 = document.querySelector("#sqr_12");
 let element_20 = document.querySelector("#sqr_20");
 let element_21 = document.querySelector("#sqr_21");
 let element_22 = document.querySelector("#sqr_22");
+
+function chance(element) {
+    if (player[0] === true) {
+        document.getElementById("player_0").style.color = `red`;
+        document.getElementById("player_1").style.color = `black`;
+
+        element.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
+        player[0] = false;
+        player[1] = true;
+        lock[0][0] = 1;
+        win_cond(player[0], player[1]);
+    } else if (player[1] === true) {
+        document.getElementById("player_0").style.color = `black`;
+        document.getElementById("player_1").style.color = `#63E6BE`;
+        element.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+        player[0] = true;
+        player[1] = false;
+        lock[0][0] = 1;
+        win_cond(player[0], player[1]);
+    }
+}
 function sqrUpd_00() {
     if (lock[0][0] === 0) {
         if (flag === 0) {
+            console.log("here in sqrUpd()")
             flag = 1;
             element_00.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[0][0] = 1;
+            console.log("Bye bye sqrUpd()")
         }
         else {
-            if (player[0] === true) {
-                element_00.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[0][0] = 1;
-                win_cond(player[0], player[1]);
-            } else if (player[1] === true) {
-                element_00.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[0][0] = 1;
-                win_cond(player[0], player[1]);
-            }
+            chance(element_00)
         }
     }
 }
@@ -47,23 +60,13 @@ function sqrUpd_01() {
         if (flag === 0) {
             flag = 1;
             element_01.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[0][1] = 1;
         }
         else {
-            if (player[0] === true) {
-                element_01.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[0][1] = 1;
-                win_cond(player[0], player[1]);
-            } else if (player[1] === true) {
-                element_01.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[0][1] = 1;
-                win_cond(player[0], player[1]);
-            }
+            chance(element_01)
         }
     }
 
@@ -73,23 +76,13 @@ function sqrUpd_02() {
         if (flag === 0) {
             flag = 1;
             element_02.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[0][2] = 1;
         }
         else {
-            if (player[0] === true) {
-                element_02.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[0][2] = 1;
-                win_cond(player[0], player[1]);
-            } else if (player[1] === true) {
-                element_02.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[0][2] = 1;
-                win_cond(player[0], player[1]);
-            }
+            chance(element_02)
         }
     }
 
@@ -99,25 +92,13 @@ function sqrUpd_10() {
         if (flag === 0) {
             flag = 1;
             element_10.innerHTML = `<i class="fa-solid fa-xmark fa-7x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[1][0] = 1;
         }
         else {
-            if (player[0] === true) {
-                element_10.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[1][0] = 1;
-                win_cond(player[0], player[1]);
-
-            } else if (player[1] === true) {
-                element_10.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[1][0] = 1;
-                win_cond(player[0], player[1]);
-
-            }
+            chance(element_10)
         }
     }
 
@@ -127,25 +108,13 @@ function sqrUpd_11() {
         if (flag === 0) {
             flag = 1;
             element_11.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[1][1] = 1;
         }
         else {
-            if (player[0] === true) {
-                element_11.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[1][1] = 1;
-                win_cond(player[0], player[1]);
-
-            } else if (player[1] === true) {
-                element_11.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[1][1] = 1;
-                win_cond(player[0], player[1]);
-
-            }
+            chance(element_11)
         }
     }
 
@@ -155,25 +124,13 @@ function sqrUpd_12() {
         if (flag === 0) {
             flag = 1;
             element_12.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[1][2] = 1;
         }
         else {
-            if (player[0] === true) {
-                element_12.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[1][2] = 1;
-                win_cond(player[0], player[1]);
-
-            } else if (player[1] === true) {
-                element_12.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[1][2] = 1;
-                win_cond(player[0], player[1]);
-
-            }
+            chance(element_12)
         }
     }
 
@@ -183,25 +140,13 @@ function sqrUpd_20() {
         if (flag === 0) {
             flag = 1;
             element_20.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[2][0] = 1;
         }
         else {
-            if (player[0] === true) {
-                element_20.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[2][0] = 1;
-                win_cond(player[0], player[1]);
-
-            } else if (player[1] === true) {
-                element_20.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[2][0] = 1;
-                win_cond(player[0], player[1]);
-
-            }
+            chance(element_20)
         }
     }
 
@@ -211,26 +156,14 @@ function sqrUpd_21() {
         if (flag === 0) {
             flag = 1;
             element_21.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[2][1] = 1;
 
         }
         else {
-            if (player[0] === true) {
-                element_21.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[2][1] = 1;
-                win_cond(player[0], player[1]);
-
-            } else if (player[1] === true) {
-                element_21.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[2][1] = 1;
-                win_cond(player[0], player[1]);
-
-            }
+            chance(element_21)
         }
     }
 
@@ -241,28 +174,14 @@ function sqrUpd_22() {
         if (flag === 0) {
             flag = 1;
             element_22.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[2][2] = 1;
 
         }
         else {
-            if (player[0] === true) {
-                element_22.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
-                player[0] = false;
-                player[1] = true;
-                lock[2][2] = 1;
-
-                win_cond(player[0], player[1]);
-
-            } else if (player[1] === true) {
-                element_22.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
-                player[0] = true;
-                player[1] = false;
-                lock[2][2] = 1;
-
-                win_cond(player[0], player[1]);
-
-            }
+            chance(element_22)
         }
     }
 }
@@ -360,6 +279,8 @@ function wZero(element_a, element_b, element_c, player_0, player_1) {
             element_a.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
             element_b.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
             element_c.innerHTML = `<i class="fa-solid fa-o fa-7x" style="color: #63E6BE;"></i>`;
+            document.getElementById("player_0").style.color = `black`;
+            document.getElementById("player_1").style.color = `#63E6BE`;
             setTimeout(() => { alert("Player 1 won, congratulations !!!") }, 50)
             return 1
         }
@@ -376,9 +297,11 @@ function wCross(element_a, element_b, element_c, player_0, player_1) {
                     lock[i][j] = 1
                 }
             }
-            element_a.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
-            element_b.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
-            element_c.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: #63E6BE;"></i>`
+            element_a.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: red;"></i>`
+            element_b.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: red;"></i>`
+            element_c.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: red;"></i>`
+            document.getElementById("player_0").style.color = `red`;
+            document.getElementById("player_1").style.color = `black`;
             setTimeout(() => { alert("Player 1 won, congratulations !!!") }, 50)
             return 1
         }
@@ -402,4 +325,9 @@ function newGame() {
         [0, 0, 0],
         [0, 0, 0]
     ];
+
+    flag = 0;
+
+    document.getElementById("player_0").style.color = `red`;
+    document.getElementById("player_1").style.color = `black`;
 }
