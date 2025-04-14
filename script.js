@@ -41,14 +41,12 @@ function chance(element) {
 function sqrUpd_00() {
     if (lock[0][0] === 0) {
         if (flag === 0) {
-            console.log("here in sqrUpd()")
             flag = 1;
             element_00.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
             document.getElementById("player_0").style.color = `black`;
             document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[0][0] = 1;
-            console.log("Bye bye sqrUpd()")
         }
         else {
             chance(element_00)
@@ -268,7 +266,6 @@ function isAllLocked(lock) {
 
 function wZero(element_a, element_b, element_c, player_0, player_1) {
     if (isZero(element_a) && isZero(element_b) && isZero(element_c)) {
-        console.log("in wZero()")
         if ((player_0 === false) && (player_1 === true)) {
             //player 1 won 
             for (let i = 0; i < 3; i++) {// since a player won, game over
