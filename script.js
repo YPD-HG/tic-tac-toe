@@ -26,7 +26,6 @@ function chance(element) {
         element.innerHTML = `<i class="fa-solid fa-o fa-7x"></i>`
         player[0] = false;
         player[1] = true;
-        lock[0][0] = 1;
         win_cond(player[0], player[1]);
     } else if (player[1] === true) {
         document.getElementById("player_0").style.color = `black`;
@@ -34,7 +33,6 @@ function chance(element) {
         element.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
         player[0] = true;
         player[1] = false;
-        lock[0][0] = 1;
         win_cond(player[0], player[1]);
     }
 }
@@ -49,6 +47,7 @@ function sqrUpd_00() {
             lock[0][0] = 1;
         }
         else {
+            lock[0][0] = 1;
             chance(element_00)
         }
     }
@@ -64,6 +63,7 @@ function sqrUpd_01() {
             lock[0][1] = 1;
         }
         else {
+            lock[0][1] = 1;
             chance(element_01)
         }
     }
@@ -80,6 +80,7 @@ function sqrUpd_02() {
             lock[0][2] = 1;
         }
         else {
+            lock[0][2] = 1;
             chance(element_02)
         }
     }
@@ -96,10 +97,10 @@ function sqrUpd_10() {
             lock[1][0] = 1;
         }
         else {
+            lock[1][0] = 1;
             chance(element_10)
         }
     }
-
 }
 function sqrUpd_11() {
     if (lock[1][1] === 0) {
@@ -112,6 +113,7 @@ function sqrUpd_11() {
             lock[1][1] = 1;
         }
         else {
+            lock[1][1] = 1;
             chance(element_11)
         }
     }
@@ -128,6 +130,7 @@ function sqrUpd_12() {
             lock[1][2] = 1;
         }
         else {
+            lock[1][2] = 1;
             chance(element_12)
         }
     }
@@ -144,7 +147,9 @@ function sqrUpd_20() {
             lock[2][0] = 1;
         }
         else {
+            lock[2][0] = 1;
             chance(element_20)
+
         }
     }
 
@@ -161,6 +166,7 @@ function sqrUpd_21() {
 
         }
         else {
+            lock[2][1] = 1;
             chance(element_21)
         }
     }
@@ -176,9 +182,9 @@ function sqrUpd_22() {
             document.getElementById("player_1").style.color = `#63E6BE`;
             player[0] = true;
             lock[2][2] = 1;
-
         }
         else {
+            lock[2][2] = 1;
             chance(element_22)
         }
     }
@@ -243,15 +249,15 @@ function win_cond(player_0, player_1) {
     // Won by Zero in Anti-Diagonal `/`
     let zad = wZero(element_02, element_11, element_20, player_0, player_1);
 
-    // console.log("No Player Won? :",(c1r === 0 && z1r === 0 && c2r === 0 && z2r === 0 && c3r === 0 && z3r === 0 &&
+    // console.log("No Player Won? :", (c1r === 0 && z1r === 0 && c2r === 0 && z2r === 0 && c3r === 0 && z3r === 0 &&
     //     c1c === 0 && z1c === 0 && c2c === 0 && z2c === 0 && c3c === 0 && z3c === 0 &&
     //     cmd === 0 && zmd === 0 && cad === 0 && zad === 0))
-    // console.log("All Cells Locked? :", isAllLocked(lock) )
+    // console.log("All Cells Locked? :", isAllLocked(lock))
     if ((c1r === 0 && z1r === 0 && c2r === 0 && z2r === 0 && c3r === 0 && z3r === 0 &&
         c1c === 0 && z1c === 0 && c2c === 0 && z2c === 0 && c3c === 0 && z3c === 0 &&
         cmd === 0 && zmd === 0 && cad === 0 && zad === 0) && (isAllLocked(lock))) {
         // No Player won And all the cells are filled
-        alert("Its a Draw :|")
+        setTimeout(() => { alert("Its a Draw :|") }, 50)
     }
 }
 
