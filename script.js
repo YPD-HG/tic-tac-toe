@@ -305,7 +305,7 @@ function wCross(element_a, element_b, element_c, player_0, player_1) {
             element_c.innerHTML = `<i class="fa-solid fa-xmark fa-7.5x" style="color: red;"></i>`
             document.getElementById("player_0").style.color = `red`;
             document.getElementById("player_1").style.color = `black`;
-            setTimeout(() => { alert("Player 1 won, congratulations !!!") }, 50)
+            setTimeout(() => { alert("Player 0 won, congratulations !!!") }, 50)
             return 1
         }
     }
