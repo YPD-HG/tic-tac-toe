@@ -28,7 +28,6 @@ for (let i = 0; i < squares.length; i++) {
     squares[i].addEventListener("click", () => {
         if (lock === 0) {
             if (squares[i].innerHTML === ``) {
-
                 if (currentPlayer === player[0]) {
                     squares[i].innerHTML = `<i class="fa-solid fa-xmark fa-7.5x"></i>`
                     someoneWon = won()
@@ -64,12 +63,12 @@ for (let i = 0; i < squares.length; i++) {
                     endMessage.textContent = `X's turn!`
                     currentPlayer = player[0];
                 }
+
             }
         }
-
-
-
+        Draw()
     })
+
 }
 
 function won() {
@@ -99,14 +98,13 @@ function won() {
             }
         }
     }
-    // console.log("************** ")
-
     return false;
 }
 
-function cellFull() {
+function squaresFull() {
     for (let i = 0; i < 9; i++) {
-        if (cells[i] !== 'X' || 'O') {
+        if (squares[i].innerHTML === `` ||
+            squares[i].innerHTML === ``) {
             return false
         }
     }
@@ -114,7 +112,19 @@ function cellFull() {
 }
 
 function Draw() {
-    if (cellFull() && !won()) {
-        alert("Its Draww :|")
+    if (squaresFull() && !someoneWon) {
+        endMessage.style.color = `orange`
+        endMessage.textContent = `Its Draw :|`
     }
+}
+
+function restartButton() {
+    someoneWon = false;
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].innerHTML = ``
+    }
+    endMessage.textContent = `X's turn!`
+    endMessage.style.color = `red`
+    currentPlayer = player[0]
+    lock = 0;
 }
