@@ -3,7 +3,9 @@ h1 {
     text-align: center;
 }
 
-body {}
+h3 {
+    font-family: "Inter", serif;
+}
 
 .container {
     display: grid;
